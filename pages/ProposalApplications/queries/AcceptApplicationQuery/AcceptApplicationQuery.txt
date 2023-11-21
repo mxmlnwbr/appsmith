@@ -1,0 +1,21 @@
+START TRANSACTION;
+
+UPDATE Proposal
+SET statusKey = 'MATCHED'
+WHERE id = '{{data_table.triggeredRow.proposalId}}';
+
+UPDATE UserProposalSupervision
+SET studentEmail = '{{data_table.triggeredRow.email}}'
+WHERE id = '{{data_table.triggeredRow.proposalId}}';
+
+-- Accept and set application
+UPDATE ProposalApplication
+SET statusKey = 'ACCEPTED', supervisionId = '{{data_table.triggeredRow.proposalId}}'
+WHERE id = '{{data_table.triggeredRow.applicationId}}';
+
+-- set all other applications to declined
+UPDATE proposalapplication
+SET statusKey = 'DECLINED', supervisionId = {{null}}
+WHERE proposalId = '{{data_table.triggeredRow.proposalId}}' AND email != '{{data_table.triggeredRow.email}}';
+
+COMMIT;;

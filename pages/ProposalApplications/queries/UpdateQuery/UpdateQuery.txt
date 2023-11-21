@@ -1,0 +1,13 @@
+UPDATE proposal SET
+		title = '{{update_form.fieldState.title.isVisible ? update_form.formData.title : update_form.sourceData.title}}',
+		description = '{{update_form.fieldState.description.isVisible ? update_form.formData.description : update_form.sourceData.description}}',
+    language = '{{update_form.fieldState.language.isVisible ? update_form.formData.language : update_form.sourceData.language}}',
+		studyLevel = '{{update_form.fieldState.studyLevel.isVisible ? update_form.formData.studyLevel : update_form.sourceData.studyLevel}}',
+		timeFrame = '{{update_form.fieldState.timeFrame.isVisible ? update_form.formData.timeFrame : update_form.sourceData.timeFrame}}',
+		topicAreaSlug = '{{update_form.fieldState.topicAreaSlug.isVisible ? update_form.formData.topicAreaSlug : update_form.sourceData.topicAreaSlug}}',
+		typeKey = '{{update_form.fieldState.typeKey.isVisible ? update_form.formData.typeKey : update_form.sourceData.typeKey}}',
+		statusKey = '{{update_form.fieldState.statusKey.isVisible ? update_form.formData.statusKey : update_form.sourceData.statusKey}}',
+		ownedByUserEmail = '{{update_form.fieldState.ownedByUserEmail.isVisible ? update_form.formData.ownedByUserEmail : update_form.sourceData.ownedByUserEmail}}',
+		ownedByStudent = '{{update_form.fieldState.ownedByStudent.isVisible ? update_form.formData.ownedByStudent : update_form.sourceData.ownedByStudent}}',
+		createdAt = '{{update_form.fieldState.createdAt.isVisible ? update_form.formData.createdAt : update_form.sourceData.createdAt}}'
+  WHERE id = {{data_table.selectedRow.id}};

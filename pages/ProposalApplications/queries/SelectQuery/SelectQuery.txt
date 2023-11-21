@@ -1,0 +1,10 @@
+SELECT
+  proposalapplication.id as applicationId, proposal.id as proposalId, proposal.title, proposalapplication.statusKey, proposalapplication.email, proposalapplication.fullName
+FROM
+	proposal
+JOIN
+	proposalapplication
+ON 
+	proposal.id = proposalapplication.proposalId
+WHERE
+	proposal.typeKey = "SUPERVISOR"

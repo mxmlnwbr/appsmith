@@ -1,0 +1,28 @@
+INSERT INTO proposal (
+	id,
+	title,
+	description,
+	language,
+	studyLevel,
+	timeFrame,
+	topicAreaSlug,
+	typeKey,
+	statusKey,
+	ownedByUserEmail,
+	ownedByStudent,
+	createdAt
+)
+VALUES (
+	'{{insert_form.formData.id}}',
+	'{{insert_form.formData.title}}',
+	'{{insert_form.formData.description}}',
+	'{{insert_form.formData.language}}',
+	'{{insert_form.formData.studyLevel}}',
+	'{{insert_form.formData.timeFrame}}',
+	'{{insert_form.formData.topicAreaSlug}}',
+	'{{insert_form.formData.typeKey}}',
+	'{{insert_form.formData.statusKey}}',
+	'{{insert_form.formData.ownedByUserEmail}}',
+	'{{insert_form.formData.ownedByStudent}}',
+	'{{insert_form.formData.createdAt}}'
+);

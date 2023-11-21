@@ -1,0 +1,3 @@
+UPDATE proposal SET
+		statusKey = '{{update_form.formData.statusKey}}'
+WHERE id = {{data_table.selectedRow.id}};
